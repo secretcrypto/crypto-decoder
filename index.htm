@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Top Secret Crypto Decoder Finder POA Network Coin Faucet</title>
+	<script src="web3.min.js"></script>
+	<script>
+		web3 = new Web3(new Web3.providers.HttpProvider("https://core.poa.network"));
+
+		function printAccountBalance() {
+				var GET = {};
+				var query = window.location.search.substring(1).split("&");
+				for (var i = 0, max = query.length; i < max; i++)
+				{
+					if (query[i] === "") // check for trailing & with no param
+						continue;
+					var param = query[i].split("=");
+					GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
+				}
+				var account = GET.account;
+
+			                               
+                                var appbi = [  {    "constant": false,    "inputs": [],    "name": "die",    "outputs": [],    "payable": false,    "stateMutability": "nonpayable",    "type": "function"  },  {    "constant": true,    "inputs": [],    "name": "say",    "outputs": [      {        "name": "",        "type": "string"      }    ],    "payable": false,    "stateMutability": "view",    "type": "function"  },  {    "inputs": [      {        "name": "_message",        "type": "string"      }    ],    "payable": false,    "stateMutability": "nonpayable",    "type": "constructor"  }];                                
+                                var greeter = web3.eth.contract(appbi).at(account).say()
+
+				document.write('[' + account + ']<br><br>')
+			
+			        document.write(greeter);
+		}
+	</script>
+  </head>
+
+  <body>
+  	<h3>Top Secret Crypto Decoder</h3>
+	<form method=GET action="index.htm">
+		Decode A TopSecretCrypto Message...Example 0x17700cb07015e4623a168b5622e0fa29231a8a1b 
+<br><br><input type=text size=50 name=account><input type=submit>
+	</form>
+		
+		<p>Latest Block: 
+		<script>
+			document.write(web3.eth.blockNumber + "<br>");	
+		</script>
+		</p>
+		<p>TopSecretCrypto:
+		<script>
+			printAccountBalance();
+		</script>
+		</p>
+
+<p><img  alt="Decoder" height="209" width="209"
+src="decode.jpg"></p>
+
+<p>
+<a href="http://zep.cnc.net/crypto.htm">Create A Top Secret Crypto Message</a> And We Will Send You 0.5 POA Coin
+</p>
+
+<p>
+c 2018 Top Secret Crypto Beta Best Gun
+ | <a href="https://poaexplorer.com/address/search/0x20c51c366ae9b0058d66d50e3c70cb1979f9e998">Verify Contract</a> 
+ | <a href="https://core-netstat.poa.network">POA Network Status</a>
+ </p>
+
+<p>
+
+<a href="https://www.stateofthedapps.com/dapps/top-secret-crypto">State Of Dapps</a>
+| <a href="https://dappvolume.com/dapp/735/top-secret-crypto">Dapp Volume</a>
+| <a href="https://blockscout.com/poa/core">Blockscout</a>
+</p>
+
+<p>
+<a href="limericks.htm">CryptoLimericks</a> | <a href="classic.htm">Ethereum Classic Dapp</a> 
+| <a href="http://www.rss.hm/ebert_archive">Roger Ebert</a>  
+</p>
+
+</body>
+</html>

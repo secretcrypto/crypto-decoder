@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Top Secret Crypto Decoder Ethereum Classic Dapp</title>
+	<script src="web3.min.js"></script>
+	<script>
+		web3 = new Web3(new Web3.providers.HttpProvider("https://web3.gastracker.io"));
+
+		function printAccountBalance() {
+				var GET = {};
+				var query = window.location.search.substring(1).split("&");
+				for (var i = 0, max = query.length; i < max; i++)
+				{
+					if (query[i] === "") // check for trailing & with no param
+						continue;
+					var param = query[i].split("=");
+					GET[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
+				}
+				var account = GET.account;
+
+			                               
+                                var appbi = [  {    "constant": false,    "inputs": [],    "name": "die",    "outputs": [],    "payable": false,    "stateMutability": "nonpayable",    "type": "function"  },  {    "constant": true,    "inputs": [],    "name": "say",    "outputs": [      {        "name": "",        "type": "string"      }    ],    "payable": false,    "stateMutability": "view",    "type": "function"  },  {    "inputs": [      {        "name": "_message",        "type": "string"      }    ],    "payable": false,    "stateMutability": "nonpayable",    "type": "constructor"  }];                                
+                                var greeter = web3.eth.contract(appbi).at(account).say()
+
+				document.write('[' + account + ']<br><br>')
+			
+			        document.write(greeter);
+		}
+	</script>
+  </head>
+
+  <body>
+  	<h3>Top Secret Crypto Decoder</h3>
+	<form method=GET action="classic.htm">
+		Decode A TopSecretCrypto Message...Example 0xC1723223b088aDE1b0bf76537feb462b199a2Ef9 
+<br><br><input type=text size=50 name=account><input type=submit>
+	</form>
+		
+		<p>Latest Block: 
+		<script>
+			document.write(web3.eth.blockNumber + "<br>");	
+		</script>
+		</p>
+		<p>TopSecretCrypto:
+		<script>
+			printAccountBalance();
+		</script>
+		</p>
+
+<p><img  alt="Decoder" height="209" width="209"
+src="decode.jpg"></p>
+
+<p>
+c 2018 Top Secret Crypto Beta Ether Classic
+<a href="http://gastracker.io/addr/0xffa6fc6a314ca6efcb0ec8d5f4cc05a1e46a0d3c">Verify Contract</a>  
+</p>
+
+</body>
+</html>
